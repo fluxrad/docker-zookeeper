@@ -20,7 +20,6 @@ zookeeper2:
     - "3889:3889"
   environment:
     ZOOKEEPER_ID: 2   
-    ZOOKEEPER_COUNT: 3
   volumes:
     - zookeeper/tmp:/tmp/zk
 zookeeper3:
@@ -31,6 +30,5 @@ zookeeper3:
     - "3890:3890"
   environment:
     ZOOKEEPER_ID: 3
-    ZOOKEEPER_COUNT: 3
   volumes:
     - zookeeper/tmp:/tmp/zk
