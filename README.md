@@ -1,6 +1,20 @@
 docker-zookeeper
 ================
 
-Builds a docker image for Zookeeper.
+Now with 100% more multi-node.
 
-```docker build -t <user>/zookeeper:3.4.6 .```
+It should auto-generate a cluster of three Zookeeper nodes. Add or remove nodes as you see fit.
+
+*Usage*
+
+```
+docker-compose build
+docker-compose up
+```
+
+*Notes*
+
+Check `docker-compose.yml` and `zookeeper/script/run.sh` for more config info.
+
+
+

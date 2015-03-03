@@ -1,0 +1,36 @@
+zookeeper1:
+  build: zookeeper
+  ports: 
+    - "2181:2181"
+    - "2888:2888"
+    - "3888:3888"
+  environment: 
+    ZOOKEEPER_ID: 1   
+    ZOOKEEPER_COUNT: 3
+  links:
+    - zookeeper2:zookeeper2
+    - zookeeper3:zookeeper3
+  volumes:
+    - zookeeper/tmp:/tmp/zk
+zookeeper2:
+  build: zookeeper
+  ports: 
+    - "2182:2182"
+    - "2889:2889"
+    - "3889:3889"
+  environment:
+    ZOOKEEPER_ID: 2   
+    ZOOKEEPER_COUNT: 3
+  volumes:
+    - zookeeper/tmp:/tmp/zk
+zookeeper3:
+  build: zookeeper
+  ports: 
+    - "2183:2183"
+    - "2890:2890"
+    - "3890:3890"
+  environment:
+    ZOOKEEPER_ID: 3
+    ZOOKEEPER_COUNT: 3
+  volumes:
+    - zookeeper/tmp:/tmp/zk
